@@ -1,3 +1,8 @@
+🏗️ 🚜
+
+![Under Construction](https://img.shields.io/badge/STATUS-UNDER_CONSTRUCTION-orange?style=for-the-badge&logo=construction)
+
+
 # WBS Node.js TypeScript Backend Scaffold
 
 A modern, production-ready scaffold for Node.js backend projects using TypeScript with ES modules support.
