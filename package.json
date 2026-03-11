@@ -5,6 +5,30 @@
   "main": "dist/app.js",
   "type": "module",
   "imports": {
+    "#db": {
+      "development": "./src/db/index.ts",
+      "default": "./dist/db/index.js"
+    },
+    "#controllers/*": {
+      "development": "./src/controllers/*.ts",
+      "default": "./dist/controllers/*.js"
+    },
+    "#models/*": {
+      "development": "./src/models/*.ts",
+      "default": "./dist/models/*.js"
+    },
+    "#routes/*": {
+      "development": "./src/routes/*.ts",
+      "default": "./dist/routes/*.js"
+    },
+    "#schemas/*": {
+      "development": "./src/schemas/*.ts",
+      "default": "./dist/schemas/*.js"
+    },
+    "#middleware/*": {
+      "development": "./src/middleware/*.ts",
+      "default": "./dist/middleware/*.js"
+    },
     "#utils": {
       "development": "./src/utils/index.ts",
       "default": "./dist/utils/index.js"
@@ -21,7 +45,20 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
     "@types/node": "^24.10.12",
+    "@types/swagger-ui-express": "^4.1.8",
+    "@types/yamljs": "^0.2.34",
     "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "mongoose": "^9.3.0",
+    "swagger-ui-express": "^5.0.1",
+    "yamljs": "^0.3.0",
+    "zod": "^4.3.6"
   }
 }
