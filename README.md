@@ -7,26 +7,13 @@
 A backend API for managing users, categories, products, and orders.
 
 <p align="center">
-  <img alt="Node.js" title="Node.js" height="36"
-       src="https://raw.githubusercontent.com/github/explore/main/topics/nodejs/nodejs.png" />
-
-  <img alt="Express" title="Express.js" height="36"
-       src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" />
-
-  <img alt="TypeScript" title="TypeScript" height="36"
-       src="https://raw.githubusercontent.com/github/explore/main/topics/typescript/typescript.png" />
-
-  <img alt="MongoDB" title="MongoDB" height="36"
-       src="https://raw.githubusercontent.com/github/explore/main/topics/mongodb/mongodb.png" />
-
-  <img alt="Mongoose" title="Mongoose" height="36"
-       src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongoose/mongoose-original.svg" />
-
-  <img alt="Zod" title="Zod Validation" height="36"
-       src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/zod.svg" />
-
-  <img alt="Swagger" title="Swagger / OpenAPI" height="36"
-       src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swagger/swagger-original.svg" />
+  <img alt="Node.js" title="Node.js" height="36" src="https://raw.githubusercontent.com/github/explore/main/topics/nodejs/nodejs.png" />&nbsp;&nbsp;
+  <img alt="Express.js" title="Express.js" height="36" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" />&nbsp;&nbsp;
+  <img alt="TypeScript" title="TypeScript" height="36" src="https://raw.githubusercontent.com/github/explore/main/topics/typescript/typescript.png" />&nbsp;&nbsp;
+  <img alt="MongoDB" title="MongoDB" height="36" src="https://raw.githubusercontent.com/github/explore/main/topics/mongodb/mongodb.png" />&nbsp;&nbsp;
+  <img alt="Mongoose" title="Mongoose" height="36" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongoose/mongoose-original.svg" />&nbsp;&nbsp;
+  <img alt="Zod" title="Zod" height="36" src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/zod.svg" />&nbsp;&nbsp;
+  <img alt="Swagger UI" title="Swagger UI / OpenAPI" height="36" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swagger/swagger-original.svg" />
 </p>
 
 ## Features
