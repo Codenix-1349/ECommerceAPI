@@ -201,8 +201,3 @@ PORT=3000
 MONGO_URI=your_mongodb_connection_string
 ```
 
-## Notes
-
-- `.env` should not be committed
-- `.env.example` should remain in the repository as a template
-- MongoDB collections are created automatically when documents are inserted
