@@ -6,6 +6,29 @@
 
 A backend API for managing users, categories, products, and orders.
 
+<p align="center">
+  <img alt="Node.js" title="Node.js" height="36"
+       src="https://raw.githubusercontent.com/github/explore/main/topics/nodejs/nodejs.png" />
+
+  <img alt="Express" title="Express.js" height="36"
+       src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" />
+
+  <img alt="TypeScript" title="TypeScript" height="36"
+       src="https://raw.githubusercontent.com/github/explore/main/topics/typescript/typescript.png" />
+
+  <img alt="MongoDB" title="MongoDB" height="36"
+       src="https://raw.githubusercontent.com/github/explore/main/topics/mongodb/mongodb.png" />
+
+  <img alt="Mongoose" title="Mongoose" height="36"
+       src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongoose/mongoose-original.svg" />
+
+  <img alt="Zod" title="Zod Validation" height="36"
+       src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/zod.svg" />
+
+  <img alt="Swagger" title="Swagger / OpenAPI" height="36"
+       src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swagger/swagger-original.svg" />
+</p>
+
 ## Features
 
 - Users CRUD
