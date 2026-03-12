@@ -2,90 +2,197 @@
 
 ![Under Construction](https://img.shields.io/badge/STATUS-UNDER_CONSTRUCTION-orange?style=for-the-badge&logo=construction)
 
+# ECommerce API
 
-# WBS Node.js TypeScript Backend Scaffold
+A backend API for managing users, categories, products, and orders.
 
-A modern, production-ready scaffold for Node.js backend projects using TypeScript with ES modules support.
+## Features
 
-## 🚀 Quick Start
+- Users CRUD
+- Categories CRUD
+- Products CRUD
+- Orders CRUD
+- MongoDB Atlas integration with Mongoose
+- Request validation with Zod
+- Centralized error handling
+- Product filtering by category
+- Order integrity checks
+- Server-side order total calculation
+- Swagger UI documentation
 
-### Setup
+## Tech Stack
+
+- Node.js
+- Express
+- TypeScript
+- MongoDB
+- Mongoose
+- Zod
+- Swagger UI
+
+## Getting Started
+
+### 1. Clone the repository
 
 ```bash
-# Clone the template repository
-git clone https://github.com/WebDev-WBSCodingSchool/wbs-node-ts-template.git your-project-name
+git clone git@github.com:Codenix-1349/ECommerceAPI.git
+cd ECommerceAPI
+```
 
-# Navigate to your project
-cd your-project-name
+### 2. Install dependencies
 
-# Remove the existing git history and reinitialize
-rm -rf .git
-git init
-
-# Install dependencies
+```bash
 npm install
+```
 
-# Start development
+### 3. Create the environment file
+
+Create a `.env` file in the project root:
+
+```env
+PORT=3000
+MONGO_URI=your_mongodb_connection_string
+```
+
+### 4. Start the development server
+
+```bash
 npm run dev
 ```
 
-## 📁 Project Structure
+The server will run on:
 
-```bash
-.
-├── package-lock.json   # Dependency lock file (auto-generated)
-├── package.json        # Project configuration and dependencies
-├── README.md          # This file
-├── src
-│   └── app.ts          # Application entry point
-└── tsconfig.json       # TypeScript configuration
+```text
+http://localhost:3000
 ```
 
-> **Note**: The `dist/` directory will be created automatically when you run `npm run build` to contain the compiled JavaScript output.
+## API Documentation
 
-## 🛠 Available Scripts
+Swagger UI is available at:
 
-| Command            | Description                                                |
-| ------------------ | ---------------------------------------------------------- |
-| `npm run dev`      | Start development server with file watching and hot reload |
-| `npm run build`    | Compile TypeScript to JavaScript                           |
-| `npm run start`    | Build and run the production version                       |
-| `npm run prebuild` | Clean the dist directory (runs automatically before build) |
-| `npm run prestart` | Build the project (runs automatically before start)        |
-
-## 🔧 Features
-
-### Modern TypeScript Configuration
-
-- **ES2022** target with modern JavaScript features
-- **Strict mode** enabled for better type safety
-- **ES Modules** support (native Node.js ESM)
-- **Path aliases** with `#` prefix to avoid conflicts
-- **Import extensions** support for better IDE experience
-
-### Development Experience
-
-- **File watching** with `--watch` flag for instant reloads
-- **TypeScript** compilation with proper module resolution
-- **Clean builds** with automatic dist cleanup
-- **Isolated modules** for better compilation performance
-
-### Path Aliases
-
-The project supports internal path aliases using the `#` prefix:
-
-```typescript
-// Instead of relative imports like this:
-import { helper } from '../../../utils';
-
-// You can use clean aliases like this:
-import { helper } from '#utils';
+```text
+http://localhost:3000/api-docs
 ```
 
-You need to add additional modules subpaths to the `imports` field in `package.json`
+Health check endpoint:
 
-## 📦 Dependencies
+```text
+http://localhost:3000/health
+```
 
-### Runtime Dependencies
+## Main Endpoints
 
-- None (pure Node.js setup ready for your additions)
+### Users
+
+- `GET /users`
+- `POST /users`
+- `GET /users/:id`
+- `PUT /users/:id`
+- `DELETE /users/:id`
+
+### Categories
+
+- `GET /categories`
+- `POST /categories`
+- `GET /categories/:id`
+- `PUT /categories/:id`
+- `DELETE /categories/:id`
+
+### Products
+
+- `GET /products`
+- `GET /products?categoryId=<categoryId>`
+- `POST /products`
+- `GET /products/:id`
+- `PUT /products/:id`
+- `DELETE /products/:id`
+
+### Orders
+
+- `GET /orders`
+- `POST /orders`
+- `GET /orders/:id`
+- `PUT /orders/:id`
+- `DELETE /orders/:id`
+
+## Business Rules
+
+- Products can only be created or updated with an existing `categoryId`
+- Orders can only be created or updated with an existing `userId`
+- Orders can only include existing `productId` values
+- Order totals are calculated on the server from current product prices and quantities
+- Sensitive fields such as passwords are excluded from API responses
+
+## Example Request Bodies
+
+### Create User
+
+```json
+{
+  "name": "Max Mustermann",
+  "email": "max@example.com",
+  "password": "secret123"
+}
+```
+
+### Create Category
+
+```json
+{
+  "name": "Electronics"
+}
+```
+
+### Create Product
+
+```json
+{
+  "name": "Laptop",
+  "description": "15 inch notebook",
+  "price": 999.99,
+  "categoryId": "CATEGORY_ID"
+}
+```
+
+### Create Order
+
+```json
+{
+  "userId": "USER_ID",
+  "products": [
+    {
+      "productId": "PRODUCT_ID",
+      "quantity": 2
+    }
+  ]
+}
+```
+
+## Project Structure
+
+```text
+src/
+├── controllers/
+├── db/
+├── middleware/
+├── models/
+├── routes/
+├── schemas/
+├── types/
+└── app.ts
+```
+
+## Environment Variables
+
+Required environment variables:
+
+```env
+PORT=3000
+MONGO_URI=your_mongodb_connection_string
+```
+
+## Notes
+
+- `.env` should not be committed
+- `.env.example` should remain in the repository as a template
+- MongoDB collections are created automatically when documents are inserted

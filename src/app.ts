@@ -1,32 +1,29 @@
-import express from 'express';
-import cors from 'cors';
-import { connectDB } from '#db';
-import { errorHandler, notFound } from '#middleware/errorHandler';
+import cors from "cors";
+import express from "express";
+import path from "node:path";
+import swaggerUi from "swagger-ui-express";
+import YAML from "yamljs";
+import { connectDB } from "#db";
+import { errorHandler, notFound } from "#middleware/errorHandler";
+import routes from "#routes/index";
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = Number(process.env.PORT) || 3000;
+const swaggerDocument = YAML.load(path.resolve(process.cwd(), "swagger.yaml"));
 
-// Middlewares
 app.use(cors());
 app.use(express.json());
 
-import routes from '#routes/index';
-
-// Basic health route
-app.get('/health', (req, res) => {
-  res.json({ status: 'ok', message: 'eCommerce API is running' });
+app.get("/health", (_req, res) => {
+  res.json({ status: "ok", message: "eCommerce API is running" });
 });
 
-// Mount specialized routes here
-app.use('/', routes);
-
-// Catch-all route for unknown endpoints
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use("/", routes);
 app.use(notFound);
-
-// Global Error Handler
 app.use(errorHandler);
 
-const start = async () => {
+const start = async (): Promise<void> => {
   await connectDB();
   app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
