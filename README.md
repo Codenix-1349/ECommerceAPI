@@ -1,6 +1,3 @@
-🏗️ 🚜
-
-![Under Construction](https://img.shields.io/badge/STATUS-UNDER_CONSTRUCTION-orange?style=for-the-badge&logo=construction)
 
 # ECommerce API
 
